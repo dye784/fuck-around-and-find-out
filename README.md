@@ -1,4 +1,4 @@
-# no-fucking-try-again
+# fuck-around-and-find-out
 
 Hit your MacBook to make Claude Code try again.
 
