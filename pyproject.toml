@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "no-fucking-try-again"
+version = "0.1.0"
+description = "Slap your MacBook to make Claude Code try again"
+requires-python = ">=3.10"
+dependencies = ["macimu"]
+
+[project.scripts]
+fafo = "no_fucking_try_again.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
