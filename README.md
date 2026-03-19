@@ -81,7 +81,7 @@ When frustration meets engineering.
 
 Inspired by [spank](https://github.com/taigrr/spank).
 
-Sensor reading and vibration detection ported from [apple-silicon-accelerometer](https://github.com/olvvier/apple-silicon-accelerometer).
+All the actually smart stuff — sensor reading, accelerometer access, vibration detection — comes from [apple-silicon-accelerometer](https://github.com/olvvier/apple-silicon-accelerometer). This repo is just a dumb wrapper that types angry messages into your terminal.
 
 ## License
 
