@@ -60,6 +60,7 @@ sudo .venv/bin/fafo --threshold 0.3
 | `--target` | `iTerm2` | Target app for keystrokes |
 | `--dry-run` | `False` | Print instead of sending keystrokes |
 | `--message` | `"no, fucking try again"` | Message to type |
+| `--no-claude-only` | `False` | Send keystrokes to any tab, not just Claude Code |
 | `--verbose` | `False` | Print live accelerometer readings |
 
 ## How It Works
@@ -67,7 +68,10 @@ sudo .venv/bin/fafo --threshold 0.3
 1. Streams accelerometer data from the Apple Silicon IMU via [`macimu`](https://github.com/olvvier/apple-silicon-accelerometer)
 2. Maintains a rolling baseline (~1g at rest)
 3. When the delta between current magnitude and baseline exceeds the threshold — you hit it
-4. Sends the message as keystrokes to the target app via `osascript`
+4. Checks that the frontmost terminal tab is running Claude Code (by inspecting the tab title)
+5. Sends the message as keystrokes to the target app via `osascript`
+
+By default, keystrokes are only sent when the active tab contains "claude" in its title. This prevents accidentally typing into vim, ssh sessions, or other terminal work. Use `--no-claude-only` to disable this check.
 
 ## Percussive Debugging
 

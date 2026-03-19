@@ -17,6 +17,7 @@ def main():
     parser.add_argument("--target", type=str, default="iTerm2", help="Target app name (default: 'iTerm2')")
     parser.add_argument("--dry-run", action="store_true", help="Print instead of sending keystrokes")
     parser.add_argument("--message", type=str, default="no, fucking try again", help="Message to type (default: 'no, fucking try again')")
+    parser.add_argument("--no-claude-only", action="store_true", help="Send keystrokes to any tab, not just Claude Code")
     parser.add_argument("--verbose", action="store_true", help="Print live accelerometer readings")
     args = parser.parse_args()
 
@@ -37,7 +38,7 @@ def main():
         ):
             print(f"\n  💥 {random_hit_message()}")
             print(f"     magnitude={hit.magnitude:.2f}g  delta={hit.delta:.2f}g\n")
-            send_keystroke(args.message, target=args.target, dry_run=args.dry_run)
+            send_keystroke(args.message, target=args.target, dry_run=args.dry_run, claude_only=not args.no_claude_only)
     except KeyboardInterrupt:
         print("\n\n  Peace out. ✌️\n")
         sys.exit(0)
