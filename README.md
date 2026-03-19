@@ -72,3 +72,13 @@ sudo .venv/bin/fafo --threshold 0.3
 ## Percussive Debugging
 
 When frustration meets engineering.
+
+## Credits
+
+Inspired by [spank](https://github.com/taigrr/spank).
+
+Sensor reading and vibration detection ported from [apple-silicon-accelerometer](https://github.com/olvvier/apple-silicon-accelerometer).
+
+## License
+
+[MIT](LICENSE)
